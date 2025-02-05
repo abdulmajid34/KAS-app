@@ -46,9 +46,9 @@ class AuthController extends Controller
         }
 
         $token = $user->createToken('auth_token')->plainTextToken;
-        $userData = $user->only('id', 'username', 'nama_akun', 'role');
+        // $userData = $user->only('id', 'username', 'nama_akun', 'role');
 
-        return response()->json(['token' => $token, 'user' => $userData]);
+        return response()->json(['token' => $token, 'user' => $user]);
     }
 
     // Logout
